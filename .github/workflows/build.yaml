@@ -1,0 +1,22 @@
+name: CI
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt install git build-essential pkg-config libusb-1.0-0-dev libudev-dev
+      - run: make
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - run: brew install pkg-config libusb 
+      - run: make 
+
+  macos-12:
+    runs-on: macos-latest
+    steps:
+      - run: brew install pkg-config libusb 
+      - run: make 
